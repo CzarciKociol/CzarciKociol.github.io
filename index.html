@@ -1,1 +1,31 @@
-Hello World!!! 666
+---
+layout: default
+---
+<header class="index">
+    <img src="{{ "/assets/img/logo.png" | relative_url }}" />
+    <h1>Czarci Kocioł</h1>
+</header>
+
+<main class="index">
+    <ul>
+        {% for post in paginator.posts %}
+        <li class="post">
+            <a class="link" href="{{ post.url | prepend: site.baseurl }}">
+                <span class="date">{{ post.date | date: "%d-%m-%Y" }}</span>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <span class="more">więcej...</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="navigation">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">nowsze</a>
+        {% endif %}
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">starsze</a>
+        {% endif %}
+    <div>
+</main>
