@@ -1,0 +1,8 @@
+gems: [jekyll-paginate]
+
+sass:
+    sass_dir: _sass
+
+paginate: 10
+paginate_path: "/blog/page:num/"
+
